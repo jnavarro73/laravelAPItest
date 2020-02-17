@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+//addmovie/{title}/{releaseYear}
+//removemovie/{title}
+
+
+Route::match(['get', 'post','put'], "/addmovie/{title}/{releaseYear}",'MovieController@store');
+Route::match(['get', 'post','put','delete'], "/removemovie/{title}",'MovieController@destroy');
